@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import { useEffect, useState, React } from "react";
+import CodeArea from "./components/CodeArea";
+import Try from "./components/Try";
 function App() {
+  const [Theme, SetTheme] = useState("Dark");
+  const [ThemeCode, SetThemeCode] = useState(false);
+  useEffect(() => {
+    ThemeCode === false ? SetTheme("Dark") : SetTheme("Light");
+  }, [ThemeCode]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={`w-full h-screen ${
+        Theme === "Dark" ? "bg-[#021728]" : "bg-slate-400"
+      } `}
+    >
+      <Navbar Theme={Theme} ThemeCode={ThemeCode} SetThemeCode={SetThemeCode} />
+      <CodeArea />
+      <Try/>
     </div>
   );
 }
