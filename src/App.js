@@ -16,7 +16,7 @@ function App() {
       } `}
     >
       <Navbar Theme={Theme} ThemeCode={ThemeCode} SetThemeCode={SetThemeCode} />
-      <CodeArea />
+      <CodeArea Theme={Theme}/>
       <Try/>
     </div>
   );
