@@ -2,7 +2,6 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { useEffect, useState, React } from "react";
 import CodeArea from "./components/CodeArea";
-import Try from "./components/Try";
 function App() {
   const [Theme, SetTheme] = useState("Dark");
   const [ThemeCode, SetThemeCode] = useState(false);
@@ -17,7 +16,6 @@ function App() {
     >
       <Navbar Theme={Theme} ThemeCode={ThemeCode} SetThemeCode={SetThemeCode} />
       <CodeArea Theme={Theme}/>
-      <Try/>
     </div>
   );
 }

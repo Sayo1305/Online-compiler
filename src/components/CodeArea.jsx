@@ -81,10 +81,10 @@ const CodeArea = ({ Theme }) => {
       </div>
       <textarea
       value={CurrentCode}
-        className="w-full h-[40vh] rounded-lg p-2 outline-none"
+        className="w-full h-[40vh] rounded-lg p-2 outline-none textareaclass"
         onChange={handle_change}
       ></textarea>
-      <div class="form-check form-switch">
+      {/* <div class="form-check form-switch">
         <input
         onClick={()=>{setOnInput(!OnInput)}}
           className="form-check-input "
@@ -92,9 +92,9 @@ const CodeArea = ({ Theme }) => {
           id="flexSwitchCheckChecked"
         />
         <label className="text-white form-check-label" htmlFor="flexSwitchCheckChecked">
-          Input 
+          Input  
         </label>
-      </div>
+      </div> */}
       {
         OnInput && <textarea  onChange={handle_input} className="w-[30vw] h-[10vh] rounded-lg p-2 outline-none"></textarea>
       }
@@ -109,7 +109,7 @@ const CodeArea = ({ Theme }) => {
         submit
       </button>
       {
-        CodeOutput === '' && ClickSubmit ?  <Loader type="ekvalayzer" bgColor={"#FFFFFF"}  color={'#FFFFFF'} size={50} /> : <div className="text-white text-2xl">{CodeOutput}</div>
+        CodeOutput === '' && ClickSubmit ?  <Loader type="spinner-circle" bgColor={"#FFFFFF"}  color={'#FFFFFF'} size={50} /> : <div className="text-white text-2xl">{CodeOutput}</div>
       }
     </div>
   );
